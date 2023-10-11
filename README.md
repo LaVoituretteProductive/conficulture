@@ -54,4 +54,4 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce proje
 
 ## Licence
 
-Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier [LICENSE](./license/LICENSE.txt).
+Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier [LICENSE](./License/LICENSE.txt).
