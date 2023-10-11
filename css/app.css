@@ -1,0 +1,104 @@
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  all: unset;
+  font-size:2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+.hero {
+  height: 92vh;
+  font-size: 0.8em;
+}
+
+#map {
+  height: 100%; 
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+}
+
+#sideMenu{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+#menuItems{
+  display: none;
+  height: 100%;
+}
+
+#menuBtn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 5px 10px;
+  height: auto;
+  color: black;
+  background-color: grey;
+  font-weight: bold;
+}
+
+#menuBtn:hover{
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.command {
+    padding: 4px 6px;
+    background: white;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    min-width: 200px;
+}
+form {
+  vertical-align: sub;
+}
+
+#rectangleCom{
+  border: #0080FF solid 1px;
+  margin-top: 8px;
+  height:10px; 
+  width  : 20px;
+  background : #0080FF;
+  opacity: 0.5;
+  fill-opacity: 0.3;
+}
+
+#rectangleFor{
+  border: green solid 1px;
+  margin-top: 8px;
+  height:10px; 
+  width  : 20px;
+  background : green;
+}
+
+#rectangleQuar{
+  border: #F00020 solid 1px;
+  margin-top: 8px;
+  height:10px; 
+  width  : 20px;
+  opacity: 0.5;
+  fill-opacity: 0.3;
+  background : #F00020;
+}
+
+.header {
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

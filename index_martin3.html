@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Conficulture</title>
+	
+    <meta charset="utf-8">
+    
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+    <link rel="stylesheet" href="css/app.css">
+
+	<!-- Google fonts imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+	
+	<!-- other necessary links -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+	<script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+	
+	<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<img class="confiote" src="https://img.icons8.com/color/48/null/jam.png"/>
+		<h1>Confi'culture</h1>
+		<img class="confiote" src="https://img.icons8.com/color/48/null/jam.png"/>
+	</div>
+
+	<div class="hero">
+		<div id="sideMenu">
+			<div id="menuItems">
+				<div style="text-align:center;padding-top: 1em;padding-bottom: 1em; ">
+					<span style="font-size:18px;">Couche symbologique :</span>
+				</div>
+				<div>
+				<form>
+					<input id="commune" type="checkbox" onclick="displayJsonLayer('commune')" checked>
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span id="rectangleCom" style="position:absolute; display:inline-block;">
+						</span>
+					</span> Communes
+				</form>
+				<form>
+					<input id="quartier" type="checkbox" onclick="displayJsonLayer('quartier')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span id="rectangleQuar" style="position:absolute; display:inline-block;">
+						</span>
+					</span> Quartiers
+				</form>
+				<form>
+					<input id="foret" type="checkbox" onclick="displayRouteLayer('foret')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span id="rectangleFor" style="position:absolute; display:inline-block;">
+						</span>
+					</span> Forets
+				</form>
+				</div>
+				<div>
+				<form>
+					<input id="Autoroute" type="checkbox" onclick="displayRouteLayer('Autoroute')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span style="position:absolute; display:inline-block; height:12.5px; width:100%; border-bottom: 4px solid #FF0000">
+						</span>
+					</span> Autoroute
+				</form>
+				</div>
+				<div>
+					<input id="nat" type="checkbox" onclick="displayRouteLayer('nat')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span style="position:absolute; display:inline-block; height:12.5px; width:100%; border-bottom: 3px solid #FFFF00">
+						</span>
+					</span> Nationale
+				</div>
+				<div>
+					<input id="depart" type="checkbox" onclick="displayRouteLayer('depart')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span style="position:absolute; display:inline-block; height:12.5px; width:100%; border-bottom: 2px solid #0000FF">
+						</span>
+					</span> Départementale
+				</div>
+				<div>
+					<input id="inter" type="checkbox" onclick="displayRouteLayer('inter')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span style="position:absolute; display:inline-block; height:12.5px; width:100%; border-bottom: 1.5px solid #FF7F00">
+						</span>
+					</span> Route intercommunale
+				</div>
+				<div>
+					<input id="autre" type="checkbox" onclick="displayRouteLayer('autre')">
+					<span style="position:relative; width:25px; height:18px; display:inline-block; margin-left:2px;">
+						<span style="position:absolute; display:inline-block; height:12.5px; width:100%; border-bottom: 1px solid grey">
+						</span>
+					</span> Autre routes
+				</div>
+				
+				<div id="interestMenu">
+					<div style="text-align:center;padding-top: 1em">
+						<span style="font-size:18px;">Points d'intérêt</span>
+					</div>
+				</div>
+
+				<div style="text-align:center;" id="ititietgrominet">
+
+					<div style="text-align:center;padding-top: 1em">
+						<span style="font-size:18px;">Itinéraire</span>
+					</div>
+					<p>Origine</p>
+					<select id="Origin">
+					</select>
+					<p>Destination</p>
+					<select   id="Destination">
+					</select>
+
+					<button style="margin-top: 1em;" type="button" onclick="Itineraire()"> 
+						Lancer l'itinéraire 
+					</button>
+				</div>
+				
+			</div>
+		</div>
+		<div onClick="handleClickMenu()" id="menuBtn"> ☰ </div>
+		<div id="map"></div>
+	</div>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>
