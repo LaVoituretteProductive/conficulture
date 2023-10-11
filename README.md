@@ -35,7 +35,7 @@ Pour exécuter localement ce projet, suivez ces étapes :
 1. Clônez le référentiel sur votre machine locale.
 
 ```bash
-git clone https://github.com/votre-utilisateur/conficulture.git
+git clone https://github.com/LaVoituretteProductive/conficulture.git
 ```
 
 2. Ouvrez le fichier index.html dans votre navigateur web.
