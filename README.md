@@ -4,7 +4,7 @@
 Ce projet est une cartographie interactive de lieux culturels à Montpellier, mettant en valeur les points d'intérêt, les communes, les routes, les forêts et d'autres informations géospatiales. 
 Il utilise Leaflet pour afficher les données géospatiales depuis une instance locale de GeoServer, en utilisant les protocoles WFS et WMS.
 
-![Image descriptive](./presentation_projet.png)
+![Image descriptive](./images/presentation_projet.png)
 
 ## Fonctionnalités
 
@@ -54,4 +54,4 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce proje
 
 ## Licence
 
-Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier LICENSE.
+Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier [LICENSE](./license/LICENSE.txt).
